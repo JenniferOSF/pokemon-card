@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# Boas vindas ao exercício Pokémon Card
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Orientações
 
-In the project directory, you can run:
+<details>
+  <summary><strong>‼️ Antes de começar a desenvolver</strong></summary><br />
 
-### `npm start`
+- Crie um fork desse projeto. Para isso, siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Após fazer o fork, clone o repositório criado no seu computador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Rode o `npm install`.
 
-### `npm test`
+- Vá para a branch main do seu projeto e execute o comando `git branch`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Mude para a branch  pokemon-card com o comando `git checkout -b pokemon-card`. É nessa branch que você realizará a solução para o exercício.
 
-### `npm run build`
+- Observe o que deve ser feito nas instruções.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</details><br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+  <summary><strong>🤝 Depois de terminar o desenvolvimento</strong></summary><br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Após a solução dos exercícios, abra um PR no seu repositório forkado e, se quiser, mergeie para a master.
 
-### `npm run eject`
+⚠ **Atenção!** Quando for criar o PR você se deparará com a seguinte tela:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![PR do exercício](images/example-pr.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- É necessário realizar uma mudança. Clique no *base repository* como na imagem abaixo:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Mudando a base do repositório](images/change-base.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Mude para o seu repositório. Seu nome estará na frente do nome dele, por exemplo: `antonio/exercise-pokemon-card`. Depois desse passo a página deve ficar assim:
 
-## Learn More
+![Após mudança](images/after-change.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Agora basta criar o PULL REQUEST clicando no botão `Create Pull Request`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+➡ Para cada PR realize esse mesmo processo.
 
-### Code Splitting
+</details><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<details>
+  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
 
-### Analyzing the Bundle Size
+Este repositório contém uma aplicação funcional, que utiliza a [Poke API](https://pokeapi.co/) e traz o nome e a imagem de cada Pokémon, de forma randômica.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Seu objetivo nesse exercício de fixação é utilizar todos os aprendizados sobre testes assíncronos para garantir que aplicações em React com Redux funcionem corretamente.
 
-### Making a Progressive Web App
+- Para implementar os seus testes, edite o arquivo `./App.test.js`, que se encontra dentro da pasta src, na raiz do projeto. As configurações necessárias para que os testes funcionem corretamente já estão feitas:
+  - O *mock* da função *fetch*, no arquivo `src/__mocks__/mockFetch.js`;
+  - O *mock* do retorno da Poke Api, no arquivo `src/__mocks__/pokemon.js`;
+  - A função `renderWithRedux`, no arquivo `src/helpers/renderWithRedux.js`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Ler, entender a aplicação e saber o que testar também é parte do exercício.
 
-### Advanced Configuration
+</details><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<details>
+  <summary><strong>🛠️ Executando os testes</strong></summary><br />
 
-### Deployment
+- Para rodar os testes, execute o comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm run test
+```
 
-### `npm run build` fails to minify
+</details><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Divirta-se codando!** 🚀
+
+---
+
+# Exercícios de Fixação
+
+Todos os testes dos exercícios de fixação deverão ser implementados no arquivo `./src/App.test.js`.
+
+Garanta que você entendeu a implementação da aplicação antes de realizar os testes.
+
+**Dica 1:** O *helper* `renderWithRedux` e os `mocks` do retorno da *API* e do `fetch` já estão criados, basta usá-los em seus testes.
+
+**Dica 2:** Como há requisições para API, vale a pena "esperar" o texto `Loading...` sair da tela, para você fazer os testes (você pode usar o `waitForElementToBeRemoved()`)
+
+## Exercício 1
+
+Neste exercício você deverá testar se, ao renderizar a página, o botão responsável por trazer as informações do próximo Pokémon está presente na tela.
+
+<details>
+  <summary>Testes que deverão ser feitos: </summary>
+
+1. Teste se o fetch é chamado uma vez ao carregar a página;
+2. Teste se, após a primeira chamada do fetch, o botão de "Próximo Pokémon" está presente na tela.
+
+</details>
+
+## Exercício 2
+
+Neste exercício você deverá testar se a aplicação faz uma requisição para exibir o primeiro Pokémon quando a página é carregada.
+
+<details>
+  <summary>Testes que deverão ser feitos: </summary>
+
+1. Teste se o fetch é chamado apenas uma vez ao carregar a página;
+2. Teste se o fetch foi chamado utilizando o endpoint de um Pokémon.
+    - Você pode utilizar o endpoint do _Froakie_ para construir este teste: `https://pokeapi.co/api/v2/pokemon/656/`
+
+    > **OBS:** A chamada do fetch depende do retorno da função `randomNumber`. Portanto, para testar se o fetch é chamado com um endpoint específico, você deve ser capaz de controlar o valor que é retornado pela `randomNumber`.
+
+</details>
+
+## Exercício 3
+
+Neste exercício você fará os testes básicos para verificar se a renderização é feita corretamente, além de testar que, toda vez que o botão da aplicação é clicado, ele faça uma requisição com dados diferentes para o endpoint.
+
+<details>
+  <summary>Testes que deverão ser feitos: </summary>
+
+1. Teste se, após clicar no botão que traz o próximo Pokémon, o fetch foi chamado novamente, mas agora utilizando o endpoint com o número identificador de outro Pokémon.
+    - Você pode utilizar o endpoint do _Drowzee_ para construir este teste: `https://pokeapi.co/api/v2/pokemon/96/`
+    - Lembre-se de controlar o valor que é retornado pela função `randomNumber`
+
+</details>
+
+## Exercício 4
+
+Neste exercício você deverá testar se os elementos contendo as informações do Pokémon são renderizados.
+
+<details>
+  <summary>Testes que deverão ser feitos: </summary>
+
+A tela inicia com um Pokémon renderizado. Com base nisso:
+
+1. Teste se o elemento que exibe o nome do Pokémon está presente na tela. Você pode verificar se o `data-testid=pokemon-name` está na tela.
+2. Teste se o elemento que exibe a imagem do Pokémon está presente na tela.
+    > Você pode utilizar a [documentação da React Testing Library](https://testing-library.com/docs/queries/about/) para encontrar a query mais adequada para este caso.
+
+</details>
